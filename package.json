@@ -1,29 +1,28 @@
 {
-  "name": "@wenyan-md/core",
-  "version": "1.0.13",
-  "description": "Core library for Wenyan markdown rendering & publishing",
-  "author": "Lei <caol64@gmail.com> (https://github.com/caol64)",
+  "name": "@xyzbit/markdown-nice",
+  "version": "1.0.0",
+  "description": "Markdown rendering & publishing library for FlowDraft (Forked from wenyan-core)",
+  "author": "xyzbit (https://github.com/xyzbit)",
   "license": "Apache-2.0",
   "keywords": [
-    "公众号",
     "markdown",
-    "文颜",
-    "wenyan",
-    "wechat",
+    "flowdraft",
+    "renderer",
     "publishing",
-    "renderer"
+    "wechat",
+    "公众号"
   ],
   "type": "module",
   "files": [
     "dist"
   ],
-  "homepage": "https://github.com/caol64/wenyan-core#readme",
+  "homepage": "https://github.com/xyzbit/markdown-nice#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/caol64/wenyan-core.git"
+    "url": "git+https://github.com/xyzbit/markdown-nice.git"
   },
   "bugs": {
-    "url": "https://github.com/caol64/wenyan-core/issues"
+    "url": "https://github.com/xyzbit/markdown-nice/issues"
   },
   "exports": {
     ".": {
@@ -53,12 +52,13 @@
     "build:browser": "vite build --config vite.config.browser.ts",
     "build:styles": "vite build --config vite.config.styles.ts",
     "build:math": "vite build --config vite.config.math.ts",
-    "build:all": "pnpm build && pnpm build:styles && pnpm build:math && pnpm build:browser",
-    "test:main": "pnpm build && vitest run main.test.js",
-    "test:wrapper": "pnpm build && vitest run wrapper.test.js",
-    "test:publish": "pnpm build && vitest run test/publish.test.js",
-    "test:realPublish": "pnpm build && vitest run test/realPublish.test.js",
-    "prepublishOnly": "pnpm build:all"
+    "build:all": "npm run build && npm run build:styles && npm run build:math && npm run build:browser",
+    "prepare": "npm run build:all",
+    "test:main": "npm run build && vitest run main.test.js",
+    "test:wrapper": "npm run build && vitest run wrapper.test.js",
+    "test:publish": "npm run build && vitest run test/publish.test.js",
+    "test:realPublish": "npm run build && vitest run test/realPublish.test.js",
+    "prepublishOnly": "npm run build:all"
   },
   "packageManager": "pnpm@10.7.1",
   "devDependencies": {
