@@ -2,24 +2,17 @@
     <img alt="logo" src="https://raw.githubusercontent.com/caol64/wenyan/main/Data/256-mac.png" />
 </div>
 
-# 文颜 CORE
+# Markdown Nice
 
-[![npm](https://img.shields.io/npm/v/@wenyan-md/core)](https://www.npmjs.com/package/@wenyan-md/core)
-[![License](https://img.shields.io/github/license/caol64/wenyan-core)](LICENSE)
-![NPM Downloads](https://img.shields.io/npm/dm/%40wenyan-md%2Fcore)
-[![Stars](https://img.shields.io/github/stars/caol64/wenyan-core?style=social)](https://github.com/caol64/wenyan-core)
+[![npm](https://img.shields.io/npm/v/@xyzbit/markdown-nice)](https://www.npmjs.com/package/@xyzbit/markdown-nice)
+[![License](https://img.shields.io/github/license/xyzbit/markdown-nice)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/xyzbit/markdown-nice?style=social)](https://github.com/xyzbit/markdown-nice)
 
-「文颜」是一款多平台排版美化工具，让你将 Markdown 一键发布至微信公众号、知乎、今日头条等主流写作平台。
+> **本项目 Fork 自 [wenyan-core](https://github.com/caol64/wenyan-core)，感谢原作者的优秀工作！**
 
-**文颜**现已推出多个版本：
+Markdown Nice 是一个 Markdown 排版美化和发布工具库，支持多种主题样式和一键发布到微信公众号等平台。
 
-* [macOS App Store 版](https://github.com/caol64/wenyan) - MAC 桌面应用
-* [跨平台版本](https://github.com/caol64/wenyan-pc) - Windows/Linux 跨平台桌面应用
-* [CLI 版本](https://github.com/caol64/wenyan-cli) - CI/CD 或脚本自动化发布公众号文章
-* [MCP 版本](https://github.com/caol64/wenyan-mcp) - 让 AI 自动发布公众号文章
-* [嵌入版本](https://github.com/caol64/wenyan-core) - 将文颜的核心功能嵌入 Node 或者 Web 项目
-
-本项目是 **文颜的核心库文件**，你可以将其方便地嵌入自己的应用中，以实现排版美化和自动发布功能。
+本项目是为 **[FlowDraft](https://github.com/xyzbit/FlowDraft)** AI 写作系统定制的 Markdown 渲染核心库。
 
 ## 功能
 
@@ -45,11 +38,11 @@
 ## 安装方式
 
 ```bash
-pnpm add @wenyan-md/core
-# 或者
-npm install @wenyan-md/core
-# 或者
-yarn add @wenyan-md/core
+# 从 GitHub 安装（推荐用于 FlowDraft 项目）
+npm install git+https://github.com/xyzbit/markdown-nice.git
+
+# 或者从 NPM 安装（如果已发布）
+npm install @xyzbit/markdown-nice
 ```
 
 ## 使用示例
@@ -57,9 +50,9 @@ yarn add @wenyan-md/core
 ### 1. Markdown 排版美化
 
 ```ts
-import { getGzhContent } from "@wenyan-md/core/wrapper";
+import { getGzhContent } from "@xyzbit/markdown-nice/wrapper";
 
-const inputContent = "# Hello, Wenyan";
+const inputContent = "# Hello, FlowDraft";
 const theme = "lapis";
 const highlightTheme = "solarized-light";
 const isMacStyle = true;
@@ -118,7 +111,7 @@ const { title, cover, content, description } = await getGzhContent(
 ### 2. 发布到微信公众号草稿箱
 
 ```ts
-import { publishToDraft } from "@wenyan-md/core/publish";
+import { publishToDraft } from "@xyzbit/markdown-nice/publish";
 
 // 方式1，你可以通过环境变量注入WECHAT_APP_ID和WECHAT_APP_SECRET
 const wechatAppId = process.env.WECHAT_APP_ID;
@@ -173,7 +166,7 @@ const data = await publishToDraft(title, content, cover, wechatAppId, wechatAppS
 
 推荐使用 **[unpkg](https://unpkg.com/)** 或 **[jsDelivr](https://www.jsdelivr.com/)**。
 
-浏览器版本的文颜需自行引入依赖`highlight.js`和`csstree`。
+浏览器版本需自行引入依赖`highlight.js`和`csstree`。
 
 ```html
 <!-- 添加依赖 -->
@@ -181,22 +174,17 @@ const data = await publishToDraft(title, content, cover, wechatAppId, wechatAppS
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
 
 <!-- 从 unpkg 引入 -->
-<script src="https://unpkg.com/@wenyan-md/core/dist/math/wenyan-math.js"></script>
-<script src="https://unpkg.com/@wenyan-md/core/dist/styles/wenyan-styles.js"></script>
-<script src="https://unpkg.com/@wenyan-md/core/dist/browser/wenyan-core.js"></script>
-
-<!-- 或者从 jsDelivr 引入 -->
-<script src="https://cdn.jsdelivr.net/npm/@wenyan-md/core/dist/math/wenyan-math.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@wenyan-md/core/dist/styles/wenyan-styles.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@wenyan-md/core/dist/browser/wenyan-core.js"></script>
+<script src="https://unpkg.com/@xyzbit/markdown-nice/dist/math/markdown-nice-math.js"></script>
+<script src="https://unpkg.com/@xyzbit/markdown-nice/dist/styles/markdown-nice-styles.js"></script>
+<script src="https://unpkg.com/@xyzbit/markdown-nice/dist/browser/markdown-nice.js"></script>
 
 <script>
-  // 使用全局变量 WenyanCore
-  const { configureMarked, renderMarkdown, themes } = WenyanCore;
+  // 使用全局变量 MarkdownNice
+  const { configureMarked, renderMarkdown, themes } = MarkdownNice;
 
   (async () => {
     configureMarked();
-    const input = "# Hello from Browser";
+    const input = "# Hello from FlowDraft";
     const content = await renderMarkdown(input);
     const theme = themes["lapis"];
     const styledCss = await theme.getCss();
@@ -208,7 +196,7 @@ const data = await publishToDraft(title, content, cover, wechatAppId, wechatAppS
 </script>
 ```
 
-这样你就可以在 **任意前端项目** 或 **纯静态页面** 中直接使用文颜的功能。
+这样你就可以在 **任意前端项目** 或 **纯静态页面** 中直接使用 Markdown Nice 的功能。
 
 ## 微信公众号 IP 白名单
 
@@ -240,9 +228,19 @@ description: 本文介绍如何为本地大语言模型提供外部知识库。
   * 本地路径（如：`/Users/lei/Downloads/result_image.jpg`）
   * 网络路径（如：`https://example.com/image.jpg`）
 
-## 赞助
+## 致谢
 
-如果您觉得不错，可以给我家猫咪买点罐头吃。[喂猫❤️](https://yuzhi.tech/sponsor)
+本项目基于 [wenyan-core](https://github.com/caol64/wenyan-core) 开发，感谢原作者 [@caol64](https://github.com/caol64) 的优秀工作！
+
+文颜采用了多个开源的 Typora 主题，在此向各位作者表示感谢：
+
+- [Orange Heart](https://github.com/evgo2017/typora-theme-orange-heart)
+- [Rainbow](https://github.com/thezbm/typora-theme-rainbow)
+- [Lapis](https://github.com/YiNNx/typora-theme-lapis)
+- [Pie](https://github.com/kevinzhao2233/typora-theme-pie)
+- [Maize](https://github.com/BEATREE/typora-maize-theme)
+- [Purple](https://github.com/hliu202/typora-purple-theme)
+- [物理猫-薄荷](https://github.com/sumruler/typora-theme-phycat)
 
 ## License
 
