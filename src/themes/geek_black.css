@@ -1,0 +1,236 @@
+/*
+ * Geek Black Theme
+ * Designed from reference mockup
+ */
+
+:root {
+    --geek-ink: #1f2024;
+    --geek-text: #33343a;
+    --geek-subtext: #52535a;
+    --geek-line: #9a9aa1;
+    --geek-surface: #f6f6f7;
+    --geek-quote: #f2f2f3;
+    --geek-accent: #ff7064;
+    --geek-code-bg: #222633;
+    --geek-code-bg-alt: #2a2f40;
+}
+
+#wenyan {
+    font-size: 15px;
+    font-family: var(--sans-serif-font);
+    line-height: 1.85;
+    color: var(--geek-text);
+    margin: 0 auto;
+    padding: 14px;
+    letter-spacing: 0.1px;
+    word-break: break-word;
+    word-wrap: break-word;
+    text-align: left;
+    background: #ffffff;
+}
+
+#wenyan h1,
+#wenyan h2,
+#wenyan h3,
+#wenyan h4,
+#wenyan h5,
+#wenyan h6,
+#wenyan p,
+#wenyan ul,
+#wenyan ol,
+#wenyan pre,
+#wenyan blockquote {
+    margin: 1em 0;
+}
+
+#wenyan p {
+    color: var(--geek-subtext);
+    text-align: justify;
+}
+
+#wenyan h1 {
+    font-size: 1.72em;
+    font-weight: 800;
+    color: #0f1012;
+    margin-top: 1.2em;
+    margin-bottom: 0.9em;
+}
+
+#wenyan h2 {
+    position: relative;
+    display: inline-block;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #ffffff;
+    background: var(--geek-ink);
+    border-radius: 0 0 34px 0;
+    padding: 0.42em 1.18em 0.48em 0.9em;
+    margin-top: 1.2em;
+    margin-bottom: 0.85em;
+}
+
+#wenyan h2::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: -1800px;
+    top: 0;
+    bottom: 0;
+    background: var(--geek-surface);
+}
+
+#wenyan h3 {
+    font-size: 1.28em;
+    font-weight: 700;
+    color: #2a2b31;
+    padding-bottom: 0.26em;
+    border-bottom: 2px solid var(--geek-line);
+}
+
+#wenyan h4 {
+    font-size: 1.14em;
+    font-weight: 700;
+    color: #3b3c43;
+    padding-bottom: 0.2em;
+    border-bottom: 1px solid #b5b5bc;
+}
+
+#wenyan h5,
+#wenyan h6 {
+    font-size: 1.04em;
+    font-weight: 700;
+    color: #45464d;
+}
+
+#wenyan ul,
+#wenyan ol {
+    padding-left: 1.35em;
+}
+
+#wenyan li {
+    color: #4f5057;
+    margin: 0.34em 0;
+}
+
+#wenyan li > section,
+#wenyan li > p {
+    margin: 0;
+}
+
+#wenyan blockquote {
+    margin-left: 0;
+    padding: 0.84em 1em;
+    border-left: 4px solid #a3a4aa;
+    background: var(--geek-quote);
+    color: #4a4b52;
+}
+
+#wenyan blockquote p {
+    margin: 0;
+    color: #4a4b52;
+}
+
+#wenyan a {
+    color: var(--geek-accent);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 112, 100, 0.45);
+}
+
+#wenyan strong {
+    color: var(--geek-accent);
+}
+
+#wenyan em {
+    color: #6a6b73;
+}
+
+#wenyan p code,
+#wenyan li code {
+    font-family: var(--monospace-font);
+    font-size: 0.9em;
+    color: #e7685b;
+    padding: 0.16em 0.38em;
+    border-radius: 4px;
+    background: #f2f2f2;
+}
+
+#wenyan pre {
+    margin: 1.2em 0.2em;
+    padding: 0.58em;
+    border-radius: 8px;
+    background: linear-gradient(120deg, var(--geek-code-bg), var(--geek-code-bg-alt));
+    box-shadow: 0 10px 20px rgba(18, 20, 28, 0.32);
+}
+
+#wenyan pre code {
+    display: block;
+    overflow-x: auto;
+    margin: 0.5em;
+    padding: 0;
+    font-family: var(--monospace-font);
+}
+
+#wenyan img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+#wenyan table {
+    border-collapse: collapse;
+    margin: 1.2em auto;
+    max-width: 100%;
+    table-layout: fixed;
+    text-align: left;
+    overflow: auto;
+    display: table;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+#wenyan table td,
+#wenyan table th {
+    font-size: 0.78em;
+    padding: 8px 11px;
+    line-height: 1.6;
+    border: 1px solid #d9d9de;
+    color: #44454b;
+    vertical-align: top;
+}
+
+#wenyan table th {
+    font-weight: 700;
+    color: #27272d;
+    background: #ededee;
+}
+
+#wenyan hr {
+    border: none;
+    border-top: 2px solid #8f9096;
+    margin: 1.8em 0;
+}
+
+#wenyan .footnote {
+    color: var(--geek-accent);
+}
+
+#wenyan #footnotes p {
+    display: flex;
+    margin: 0;
+    font-size: 0.9em;
+}
+
+#wenyan .footnote-num {
+    display: inline;
+    width: 10%;
+}
+
+#wenyan .footnote-txt {
+    display: inline;
+    width: 90%;
+    word-wrap: break-word;
+    word-break: break-all;
+}

@@ -1,0 +1,259 @@
+/*
+ * Cartoon Purple Theme
+ * Designed for WeChat article rendering
+ */
+
+:root {
+    --cartoon-primary: #7b75d9;
+    --cartoon-primary-deep: #655fbc;
+    --cartoon-primary-soft: #d9d2ff;
+    --cartoon-accent: #f4c26e;
+    --cartoon-text: #2d2a3a;
+    --cartoon-subtext: #5a546a;
+    --cartoon-surface: #f5f3fb;
+    --cartoon-code-bg: #252a38;
+    --cartoon-code-bg-alt: #2d3244;
+}
+
+#wenyan {
+    font-size: 15px;
+    font-family: var(--sans-serif-font);
+    line-height: 1.85;
+    color: var(--cartoon-text);
+    margin: 0 auto;
+    padding: 14px;
+    letter-spacing: 0.2px;
+    word-break: break-word;
+    word-wrap: break-word;
+    text-align: left;
+    background: linear-gradient(180deg, #ffffff 0%, #fbfaff 100%);
+}
+
+#wenyan h1,
+#wenyan h2,
+#wenyan h3,
+#wenyan h4,
+#wenyan h5,
+#wenyan h6,
+#wenyan p,
+#wenyan ul,
+#wenyan ol,
+#wenyan pre,
+#wenyan blockquote {
+    margin: 1em 0;
+}
+
+#wenyan p {
+    color: var(--cartoon-subtext);
+    text-align: justify;
+    word-spacing: 1px;
+}
+
+#wenyan h1 {
+    display: table;
+    margin: 1.5em auto 1em;
+    padding: 0.36em 1.2em;
+    border-radius: 999px;
+    font-size: 1.55em;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(135deg, #857ee8, var(--cartoon-primary));
+    box-shadow: 0 8px 20px rgba(123, 117, 217, 0.28);
+}
+
+#wenyan h1::after {
+    content: "";
+    display: inline-block;
+    width: 28px;
+    height: 12px;
+    margin-left: 8px;
+    background: url("data:image/svg+xml;utf8,<svg width='32' height='14' viewBox='0 0 32 14' xmlns='http://www.w3.org/2000/svg'><path d='M3 11L11 7' stroke='%23f4c26e' stroke-width='2' stroke-linecap='round'/><path d='M13 13L19 10' stroke='%23f4c26e' stroke-width='2' stroke-linecap='round'/><path d='M22 8L28 6' stroke='%23f4c26e' stroke-width='2' stroke-linecap='round'/></svg>")
+        no-repeat center;
+    background-size: contain;
+    vertical-align: middle;
+}
+
+#wenyan h2 {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.28em;
+    font-weight: 700;
+    color: var(--cartoon-primary);
+    margin-top: 1.35em;
+    margin-bottom: 0.75em;
+    padding-left: 0.05em;
+}
+
+#wenyan h2::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    margin-right: 6px;
+    border: 2px solid var(--cartoon-accent);
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    transform: rotate(-30deg);
+}
+
+#wenyan h2::after {
+    content: "";
+    width: 19px;
+    height: 10px;
+    margin-left: 6px;
+    background: url("data:image/svg+xml;utf8,<svg width='24' height='10' viewBox='0 0 24 10' xmlns='http://www.w3.org/2000/svg'><path d='M3 8L10 4' stroke='%23ff9f7a' stroke-width='2' stroke-linecap='round'/><path d='M13 7L20 5' stroke='%23ff9f7a' stroke-width='2' stroke-linecap='round'/></svg>")
+        no-repeat center;
+    background-size: contain;
+}
+
+#wenyan h3 {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #1e1b29;
+}
+
+#wenyan h4 {
+    font-size: 1.14em;
+    font-weight: 700;
+    color: #2a2736;
+    padding-bottom: 0.18em;
+    border-bottom: 1px solid #9a98a8;
+}
+
+#wenyan h5,
+#wenyan h6 {
+    font-size: 1.05em;
+    font-weight: 700;
+    color: #3a364a;
+}
+
+#wenyan ul,
+#wenyan ol {
+    padding-left: 1.35em;
+}
+
+#wenyan li {
+    color: #4f4a5f;
+    margin: 0.35em 0;
+}
+
+#wenyan li > section,
+#wenyan li > p {
+    margin: 0;
+}
+
+#wenyan blockquote {
+    margin-left: 0;
+    padding: 0.8em 1em;
+    border-left: 4px solid var(--cartoon-primary);
+    background: var(--cartoon-surface);
+    color: #5f5872;
+}
+
+#wenyan blockquote p {
+    margin: 0;
+    color: #5f5872;
+}
+
+#wenyan a {
+    color: #8f8ad9;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(143, 138, 217, 0.35);
+}
+
+#wenyan strong {
+    color: var(--cartoon-primary-deep);
+}
+
+#wenyan em {
+    color: #756f8c;
+}
+
+#wenyan p code,
+#wenyan li code {
+    font-family: var(--monospace-font);
+    font-size: 0.9em;
+    color: #8f8ad9;
+    padding: 0.16em 0.38em;
+    border-radius: 4px;
+    background: #f1eefc;
+}
+
+#wenyan pre {
+    margin: 1.2em 0.2em;
+    padding: 0.58em;
+    border-radius: 8px;
+    background: linear-gradient(120deg, var(--cartoon-code-bg), var(--cartoon-code-bg-alt));
+    box-shadow: 0 10px 20px rgba(19, 23, 39, 0.26);
+}
+
+#wenyan pre code {
+    display: block;
+    overflow-x: auto;
+    margin: 0.5em;
+    padding: 0;
+    font-family: var(--monospace-font);
+}
+
+#wenyan img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+#wenyan table {
+    border-collapse: collapse;
+    margin: 1.2em auto;
+    max-width: 100%;
+    table-layout: fixed;
+    text-align: left;
+    overflow: auto;
+    display: table;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+#wenyan table td,
+#wenyan table th {
+    font-size: 0.78em;
+    padding: 8px 11px;
+    line-height: 1.6;
+    border: 1px solid #dddbe8;
+    color: #3d3a49;
+    vertical-align: top;
+}
+
+#wenyan table th {
+    font-weight: 700;
+    background: #efedf7;
+}
+
+#wenyan hr {
+    border: none;
+    border-top: 2px solid #8f8e98;
+    margin: 1.8em 0;
+}
+
+#wenyan .footnote {
+    color: #8f8ad9;
+}
+
+#wenyan #footnotes p {
+    display: flex;
+    margin: 0;
+    font-size: 0.9em;
+}
+
+#wenyan .footnote-num {
+    display: inline;
+    width: 10%;
+}
+
+#wenyan .footnote-txt {
+    display: inline;
+    width: 90%;
+    word-wrap: break-word;
+    word-break: break-all;
+}

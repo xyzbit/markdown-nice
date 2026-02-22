@@ -64,6 +64,34 @@ const themeMeta: Omit<Theme, "getCss">[] = [
         appName: "物理猫-薄荷",
         author: "sumruler",
     },
+    {
+        id: "phycat_sakura",
+        name: "PhycatSakura",
+        description: "Phycat Sakura: soft pink tones inspired by obsidian-theme-phycat.",
+        appName: "物理猫-樱花",
+        author: "sumruler",
+    },
+    {
+        id: "phycat_radiation",
+        name: "PhycatRadiation",
+        description: "Phycat Radiation: dark neon-green style inspired by obsidian-theme-phycat.",
+        appName: "物理猫-辐射",
+        author: "sumruler",
+    },
+    {
+        id: "cartoon_purple",
+        name: "CartoonPurple",
+        description: "A playful purple theme with rounded title badges and soft contrast.",
+        appName: "卡通紫",
+        author: "FlowDraft",
+    },
+    {
+        id: "geek_black",
+        name: "GeekBlack",
+        description: "A monochrome geek style with strong heading structure and vivid accents.",
+        appName: "极客黑",
+        author: "FlowDraft",
+    },
 ];
 
 // 自动收集 CSS 模块
